@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Binu's Moto Rental - Dili, Timor-Leste</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-red-500 selection:text-white">
+
+  <!-- Navigation Header -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-red-600 to-red-700 flex items-center justify-center text-white text-2xl font-extrabold shadow-md shadow-red-200">
+          B
+        </div>
+        <div>
+          <span class="text-xl font-extrabold tracking-tight text-slate-900 block leading-tight">Binu's Moto Rental</span>
+          <span class="text-xs font-semibold text-red-600 tracking-wider uppercase">Dili, Timor-Leste</span>
+        </div>
+      </div>
+      
+      <div class="flex items-center gap-3">
+        <a href="tel:+67078054932" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-50 font-semibold text-sm transition">
+          <i class="fa-solid fa-phone text-red-600"></i> +670 78054932
+        </a>
+        <button onclick="openBookingModal()" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md shadow-emerald-200 transition active:scale-95">
+          <i class="fa-brands fa-whatsapp text-lg"></i> Book via WhatsApp
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative bg-slate-950 text-white overflow-hidden py-16 lg:py-24">
+    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-red-500/20 text-red-400 border border-red-500/30 mb-6">
+          <i class="fa-solid fa-bolt"></i> Premium Scooter Rentals in Dili
+        </span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
+          Explore Dili On Two Wheels With Total Freedom
+        </h1>
+        <p class="text-slate-300 text-lg mb-8 leading-relaxed max-w-xl">
+          Rent fuel-efficient 110cc automatic scooters starting from just <strong class="text-white font-bold">$15/day</strong>, with weekly and monthly discount rates. Helmets and maintenance included!
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <button onclick="openBookingModal()" class="px-7 py-3.5 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-base shadow-lg shadow-red-600/30 transition transform hover:-translate-y-0.5">
+            Book Scooter Now
+          </button>
+          <a href="#calculator" class="px-7 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold text-base transition">
+            View Rental Rates
+          </a>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="relative mx-auto rounded-3xl overflow-hidden border-4 border-slate-800 shadow-2xl bg-slate-900 group">
+          <img src="IMG-20251121-WA0020.jpg" alt="Binu's Moto Rental Fleet" class="w-full h-[380px] object-cover group-hover:scale-105 transition duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-slate-700/60 flex justify-between items-center shadow-lg">
+            <div>
+              <p class="text-xs text-slate-400 uppercase font-bold tracking-wider">Standard Daily Rate</p>
+              <p class="text-2xl font-black text-emerald-400">$15 <span class="text-sm font-normal text-slate-300">/ Day</span></p>
+            </div>
+            <button onclick="openBookingModal('Honda Genio 110cc')" class="px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-sm transition">
+              Book Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fleet Showcase Section -->
+  <section id="fleet" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">Our Scooter Fleet</h2>
+      <p class="text-slate-600 text-base">Select your preferred model below to calculate long-term discounts and generate your instant WhatsApp reservation.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      
+      <!-- Honda Genio 110cc -->
+      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+        <div class="h-64 bg-slate-100 relative overflow-hidden flex items-center justify-center p-4">
+          <img src="IMG-20251121-WA0020.jpg" alt="Honda Genio 110cc" class="h-full object-contain group-hover:scale-105 transition duration-500">
+          <span class="absolute top-4 left-4 bg-slate-900 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">Automatic</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-slate-900">Honda Genio 110cc</h3>
+            </div>
+            <p class="text-sm text-slate-500 mb-5">Modern sporty design, comfortable seating & highly fuel-efficient engine.</p>
+            
+            <div class="space-y-2 mb-6 text-sm text-slate-600">
+              <div class="flex items-center gap-2.5"><i class="fa-solid fa-gauge-high text-red-600 w-4"></i> 110cc Fuel Injection</div>
+              <div class="flex items-center gap-2.5"><i class="fa-solid fa-shield-halved text-red-600 w-4"></i> Helmet Included</div>
+              <div class="flex items-center gap-2.5"><i class="fa-solid fa-gas-pump text-red-600 w-4"></i> Ultra Low Fuel Usage</div>
+            </div>
+          </div>
+
+          <div class="border-t border-slate-100 pt-4 flex items-center justify-between">
+            <div>
+              <p class="text-xs text-slate-400 font-semibold uppercase">Daily Rate</p>
+              <p class="text-2xl font-black text-slate-900">$15 <span class="text-xs font-normal text-slate-500">/ day</span></p>
+            </div>
+            <button onclick="openBookingModal('Honda Genio 110cc')" class="px-4 py-2.5 bg-red-600 text-white rounded-xl font-bold text-sm hover:bg-red-700 transition shadow-sm">
+              Reserve Genio
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Honda Beat Blue 110cc -->
+      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+        <div class="h-64 bg-slate-100 relative overflow-hidden flex items-center justify-center p-4">
+          <img src="download__1_-removebg-preview (1).png" alt="Honda Beat Blue 110cc" class="h-full object-contain group-hover:scale-105 transition duration-500">
+          <span class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">Blue Edition</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-slate-900">Honda Beat (Blue)</h3>
+            </div>
+            <p class="text-sm text-slate-500 mb-5">Compact, nimble, and lightweight scooter perfect for cruising around Dili.</p>
+            
+            <div class="space-y-2 mb-6 text-sm text-slate-600">
+              <div class="flex items-center gap-2.5"><i class="fa-solid fa-gauge-high text-blue-600 w-4"></i> 110cc Automatic Engine</div>
+              <div class="flex items-center gap-2.5"><i class="fa-solid fa-shield-halved text-blue-600 w-4"></i> Helmet Included</div>
+              <div class="flex items-center gap-2.5"><i class="fa-solid fa-route text-blue-600 w-4"></i> Great for Local Traffic</div>
+            </div>
+          </div>
+
+          <div class="border-t border-slate-100 pt-4 flex items-center justify-between">
+            <div>
+              <p class="text-xs text-slate-400 font-semibold uppercase">Daily Rate</p>
+              <p class="text-2xl font-black text-slate-900">$15 <span class="text-xs font-normal text-slate-500">/ day</span></p>
+            </div>
+            <button onclick="openBookingModal('Honda Beat Blue 110cc')" class="px-4 py-2.5 bg-red-600 text-white rounded-xl font-bold text-sm hover:bg-red-700 transition shadow-sm">
+              Reserve Beat Blue
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Honda Beat White 110cc -->
+      <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+        <div class="h-64 bg-slate-100 relative overflow-hidden flex items-center justify-center p-4">
+          <img src="WhatsApp Image 2026-06-09 at 11.03.55.jpeg" alt="Honda Beat White 110cc" class="h-full object-contain group-hover:scale-105 transition duration-500">
+          <span class="absolute top-4 left-4 bg-slate-800 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">White Edition</span>
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-slate-900">Honda Beat (White)</h3>
+            </div>
+            <p class="text-sm text-slate-500 mb-5">Clean sporty look, smooth acceleration, and sturdy rear carrier rack.</p>
+            
+            <div class="space-y-2 mb-6 text-sm text-slate-600">
+              <div class="flex items-center gap-2.5"><i class="fa-solid fa-gauge-high text-slate-700 w-4"></i> 110cc Automatic Engine</div>
+              <div class="flex items-center gap-2.5"><i class="fa-solid fa-shield-halved text-slate-700 w-4"></i> Helmet Included</div>
+              <div class="flex items-center gap-2.5"><i class="fa-solid fa-gears text-slate-700 w-4"></i> Serviced & Checked</div>
+            </div>
+          </div>
+
+          <div class="border-t border-slate-100 pt-4 flex items-center justify-between">
+            <div>
+              <p class="text-xs text-slate-400 font-semibold uppercase">Daily Rate</p>
+              <p class="text-2xl font-black text-slate-900">$15 <span class="text-xs font-normal text-slate-500">/ day</span></p>
+            </div>
+            <button onclick="openBookingModal('Honda Beat White 110cc')" class="px-4 py-2.5 bg-red-600 text-white rounded-xl font-bold text-sm hover:bg-red-700 transition shadow-sm">
+              Reserve Beat White
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Pricing Tiers & Rates -->
+  <section id="calculator" class="py-16 bg-slate-100">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-sm border border-slate-200">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <h2 class="text-3xl font-extrabold text-slate-900">Transparent Rental Rates</h2>
+          <p class="text-slate-500 text-sm mt-2">Enjoy bigger discounts when renting for longer terms!</p>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-6 mb-10">
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center">
+            <span class="inline-block px-3 py-1 bg-slate-200 text-slate-700 text-xs font-bold rounded-full mb-3 uppercase">Daily Term</span>
+            <p class="text-xs font-bold uppercase text-slate-400 tracking-wider mb-1">1 to 6 Days</p>
+            <p class="text-4xl font-black text-slate-900 mb-1">$15</p>
+            <p class="text-xs text-slate-500">per day</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-red-50 border border-red-200 text-center relative shadow-sm">
+            <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-red-600 text-white text-[11px] font-extrabold px-3 py-0.5 rounded-full uppercase tracking-wider">Save $3/Day</span>
+            <span class="inline-block px-3 py-1 bg-red-100 text-red-700 text-xs font-bold rounded-full mb-3 uppercase">Weekly Term</span>
+            <p class="text-xs font-bold uppercase text-red-500 tracking-wider mb-1">7+ Days</p>
+            <p class="text-4xl font-black text-red-600 mb-1">$12</p>
+            <p class="text-xs text-red-500 font-medium">per day ($84/week)</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-center relative shadow-sm">
+            <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-600 text-white text-[11px] font-extrabold px-3 py-0.5 rounded-full uppercase tracking-wider">Best Value</span>
+            <span class="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full mb-3 uppercase">Monthly Term</span>
+            <p class="text-xs font-bold uppercase text-emerald-600 tracking-wider mb-1">30+ Days</p>
+            <p class="text-4xl font-black text-emerald-700 mb-1">$250</p>
+            <p class="text-xs text-emerald-600 font-medium">per full month (~$8.3/day)</p>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button onclick="openBookingModal()" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-base transition shadow-lg shadow-emerald-200">
+            <i class="fa-brands fa-whatsapp text-xl"></i> Open Interactive Booking Tool
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Booking Modal -->
+  <div id="bookingModal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white w-full max-w-2xl rounded-3xl shadow-2xl border border-slate-200 overflow-hidden my-8 animate-in fade-in duration-200">
+      
+      <!-- Modal Header -->
+      <div class="bg-slate-900 text-white p-6 flex justify-between items-center border-b border-slate-800">
+        <div>
+          <h3 class="text-xl font-extrabold flex items-center gap-2">
+            <i class="fa-brands fa-whatsapp text-emerald-400 text-2xl"></i> Reserve Motorcycle
+          </h3>
+          <p class="text-xs text-slate-400 mt-1">Calculate live rates and generate instant WhatsApp booking</p>
+        </div>
+        <button onclick="closeBookingModal()" class="w-9 h-9 rounded-full bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center transition">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <div class="p-6 sm:p-8 space-y-6">
+        
+        <!-- Form Inputs -->
+        <div class="grid sm:grid-cols-2 gap-4">
+          <!-- Customer Name -->
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Customer Name *</label>
+            <input type="text" id="customerName" placeholder="e.g. Nico" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none text-slate-900 text-sm font-medium" oninput="calculatePrice()">
+          </div>
+
+          <!-- Motorcycle Selection -->
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Select Bike *</label>
+            <select id="bikeSelect" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none text-slate-900 text-sm font-medium bg-white" onchange="calculatePrice()">
+              <option value="Honda Genio 110cc">Honda Genio 110cc</option>
+              <option value="Honda Beat Blue 110cc">Honda Beat Blue 110cc</option>
+              <option value="Honda Beat White 110cc">Honda Beat White 110cc</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-3 gap-4">
+          <!-- Term Selection -->
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Rental Term *</label>
+            <select id="termSelect" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none text-slate-900 text-sm font-medium bg-white" onchange="calculatePrice()">
+              <option value="Daily">Daily ($15/day)</option>
+              <option value="Weekly">Weekly ($12/day)</option>
+              <option value="Monthly">Monthly ($250/mo)</option>
+            </select>
+          </div>
+
+          <!-- Duration Input -->
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-600 mb-1" id="durationLabel">Number of Days *</label>
+            <input type="number" id="durationValue" value="3" min="1" max="365" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none text-slate-900 text-sm font-medium" oninput="calculatePrice()">
+          </div>
+
+          <!-- Start Date -->
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Start Date *</label>
+            <input type="date" id="startDate" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none text-slate-900 text-sm font-medium" oninput="calculatePrice()">
+          </div>
+        </div>
+
+        <!-- Location / Notes -->
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Location / Notes</label>
+          <input type="text" id="locationNotes" placeholder="e.g. Kampu baru / Pick up at airport" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none text-slate-900 text-sm font-medium" oninput="calculatePrice()">
+        </div>
+
+        <!-- Calculated Live Summary & WhatsApp Message Preview Box -->
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5">
+          <div class="flex justify-between items-center mb-3">
+            <span class="text-xs font-extrabold uppercase text-slate-500 tracking-wider">Live WhatsApp Message Preview</span>
+            <div class="text-right">
+              <span class="text-xs text-slate-400">Total Price:</span>
+              <span id="totalPriceDisplay" class="text-xl font-black text-emerald-600 ml-1.5">$45 USD</span>
+            </div>
+          </div>
+
+          <!-- Pre-formatted WhatsApp Message Card Box -->
+          <div class="bg-white border border-slate-200 rounded-xl p-4 font-mono text-xs text-slate-800 leading-relaxed shadow-inner">
+            <p class="font-bold text-slate-900 mb-2">Hi Binu's Moto Rental!</p>
+            <p class="font-bold text-slate-900 mb-1">I want to reserve a motorcycle:</p>
+            <p>• Bike: <span id="prevBike" class="font-semibold text-red-600">Honda Genio 110cc</span></p>
+            <p>• Name: <span id="prevName" class="font-semibold text-slate-900">Nico</span></p>
+            <p>• Rental Duration: <span id="prevDuration" class="font-semibold text-slate-900">3 Days</span></p>
+            <p>• Total Price: <span id="prevPrice" class="font-semibold text-emerald-600">$45 USD</span></p>
+            <p>• Start Date: <span id="prevDate" class="font-semibold text-slate-900">2026-10-10</span></p>
+            <p>• Location/Notes: <span id="prevNotes" class="font-semibold text-slate-900">Kampu baru</span></p>
+          </div>
+        </div>
+
+        <!-- WhatsApp Send Button -->
+        <button onclick="sendToWhatsApp()" class="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-base shadow-lg shadow-emerald-200 flex items-center justify-center gap-3 transition active:scale-[0.98]">
+          <i class="fa-brands fa-whatsapp text-2xl"></i> Send Reservation to WhatsApp (+670 75821954)
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl bg-red-600 flex items-center justify-center text-white text-xl font-black">
+            B
+          </div>
+          <span class="text-lg font-bold text-white">Binu's Moto Rental</span>
+        </div>
+        <p class="text-sm text-slate-400">Reliable motorcycle & scooter rentals in Dili, Timor-Leste. Honda automatic scooters available for daily, weekly, and monthly rates.</p>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold mb-4">Direct Contacts</h4>
+        <ul class="space-y-3 text-sm">
+          <li><i class="fa-solid fa-phone text-red-500 mr-2"></i> Call: <strong>+670 78054932</strong></li>
+          <li><i class="fa-brands fa-whatsapp text-emerald-500 mr-2"></i> WhatsApp: <strong>+670 75821954</strong></li>
+          <li><i class="fa-solid fa-location-dot text-red-500 mr-2"></i> Dili, Timor-Leste</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-bold mb-4">Rental Requirements</h4>
+        <ul class="space-y-2 text-sm text-slate-300">
+          <li>✓ Valid Driver's License</li>
+          <li>✓ Passport or ID Copy</li>
+          <li>✓ Helmets Included Free</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-6 border-t border-slate-900 text-xs text-center text-slate-500">
+      © 2026 Binu's Moto Rental. All rights reserved. Dili, Timor-Leste.
+    </div>
+  </footer>
+
+  <script>
+    // Set default start date to today's date formatted YYYY-MM-DD
+    document.addEventListener('DOMContentLoaded', () => {
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('startDate').value = today;
+      calculatePrice();
+    });
+
+    function openBookingModal(bikeName) {
+      if (bikeName) {
+        document.getElementById('bikeSelect').value = bikeName;
+      }
+      document.getElementById('bookingModal').classList.remove('hidden');
+      calculatePrice();
+    }
+
+    function closeBookingModal() {
+      document.getElementById('bookingModal').classList.add('hidden');
+    }
+
+    function calculatePrice() {
+      const bike = document.getElementById('bikeSelect').value;
+      const name = document.getElementById('customerName').value.trim() || 'Nico';
+      const term = document.getElementById('termSelect').value;
+      let durationVal = parseInt(document.getElementById('durationValue').value) || 1;
+      if (durationVal < 1) durationVal = 1;
+
+      const startDate = document.getElementById('startDate').value || new Date().toISOString().split('T')[0];
+      const notes = document.getElementById('locationNotes').value.trim() || 'Kampu baru';
+
+      const durationLabel = document.getElementById('durationLabel');
+      let totalPrice = 0;
+      let durationFormatted = '';
+
+      if (term === 'Daily') {
+        durationLabel.innerText = 'Number of Days *';
+        // $15/day
+        totalPrice = durationVal * 15;
+        durationFormatted = `${durationVal} Day${durationVal > 1 ? 's' : ''}`;
+      } else if (term === 'Weekly') {
+        durationLabel.innerText = 'Number of Weeks *';
+        // $12/day => $84/week
+        totalPrice = durationVal * 84;
+        durationFormatted = `${durationVal} Week${durationVal > 1 ? 's' : ''} (${durationVal * 7} Days @ $12/day)`;
+      } else if (term === 'Monthly') {
+        durationLabel.innerText = 'Number of Months *';
+        // $250/month
+        totalPrice = durationVal * 250;
+        durationFormatted = `${durationVal} Month${durationVal > 1 ? 's' : ''} ($250/mo)`;
+      }
+
+      // Update Preview Elements
+      document.getElementById('totalPriceDisplay').innerText = `$${totalPrice} USD`;
+      document.getElementById('prevBike').innerText = bike;
+      document.getElementById('prevName').innerText = name;
+      document.getElementById('prevDuration').innerText = durationFormatted;
+      document.getElementById('prevPrice').innerText = `$${totalPrice} USD`;
+      document.getElementById('prevDate').innerText = startDate;
+      document.getElementById('prevNotes').innerText = notes;
+    }
+
+    function sendToWhatsApp() {
+      const bike = document.getElementById('bikeSelect').value;
+      const name = document.getElementById('customerName').value.trim() || 'Customer';
+      const term = document.getElementById('termSelect').value;
+      let durationVal = parseInt(document.getElementById('durationValue').value) || 1;
+      const startDate = document.getElementById('startDate').value || new Date().toISOString().split('T')[0];
+      const notes = document.getElementById('locationNotes').value.trim() || 'Dili';
+
+      let totalPrice = 0;
+      let durationFormatted = '';
+
+      if (term === 'Daily') {
+        totalPrice = durationVal * 15;
+        durationFormatted = `${durationVal} Day${durationVal > 1 ? 's' : ''}`;
+      } else if (term === 'Weekly') {
+        totalPrice = durationVal * 84;
+        durationFormatted = `${durationVal} Week${durationVal > 1 ? 's' : ''}`;
+      } else if (term === 'Monthly') {
+        totalPrice = durationVal * 250;
+        durationFormatted = `${durationVal} Month${durationVal > 1 ? 's' : ''}`;
+      }
+
+      // Construct pre-formatted WhatsApp string identical to the screenshot
+      const whatsappText = 
+`Hi Binu's Moto Rental!
+
+I want to reserve a motorcycle:
+• Bike: ${bike}
+• Name: ${name}
+• Rental Duration: ${durationFormatted}
+• Total Price: $${totalPrice} USD
+• Start Date: ${startDate}
+• Location/Notes: ${notes}`;
+
+      const encodedMsg = encodeURIComponent(whatsappText);
+      const whatsappUrl = `https://wa.me/67075821954?text=${encodedMsg}`;
+
+      window.open(whatsappUrl, '_blank');
+    }
+  </script>
+</body>
+</html>
